@@ -1,4 +1,7 @@
 Rnott::Application.routes.draw do
+  root to: 'questions#input'
+  match '/results', to: 'questions#output'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
