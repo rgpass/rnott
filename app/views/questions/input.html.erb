@@ -1,2 +1,104 @@
-<h1>Questions#input</h1>
-<p>Find me in app/views/questions/input.html.erb</p>
+<h3>What are you up to tonight?</h3>
+<p>Choose one or both</p>
+<%= render 'questions/dinnericon' %>
+<%= render 'questions/drinksicon' %>
+<p id="firstStop"></p>
+<form class="custom">
+	<ul class="inline-list">
+		<li>Dinner:</li>
+		<li>
+		<label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> $</label>
+		</li>
+		<li>
+		<label for="checkbox2"><input type="checkbox" id="checkbox2" CHECKED style="display: none;"><span class="custom checkbox checked"></span> $$</label>
+		</li>
+		<li>
+		<label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3" style="display: none;"><span class="custom checkbox checked"></span> $$$</label>
+		</li>
+		<li>
+		<label for="checkbox4"><input type="checkbox" id="checkbox4" style="display: none;"><span class="custom checkbox"></span> $$$$</label>
+	</li>
+	</ul>
+</form>
+
+<form class="custom">
+	<ul class="inline-list">
+		<li>Drinks: </li>
+		<li>
+		<label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> $</label>
+		</li>
+		<li>
+		<label for="checkbox2"><input type="checkbox" id="checkbox2" CHECKED style="display: none;"><span class="custom checkbox checked"></span> $$</label>
+		</li>
+		<li>
+		<label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3" style="display: none;"><span class="custom checkbox checked"></span> $$$</label>
+		</li>
+		<li>
+		<label for="checkbox4"><input type="checkbox" id="checkbox4" style="display: none;"><span class="custom checkbox"></span> $$$$</label>
+	</li>
+	</ul>
+</form>
+<p id="numero1" class="so-awesome"></p>
+
+<form class="custom">
+	<label for="customDropdown1">How many people?</label>
+  <select id="customDropdown1" class="medium">
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>...</option>
+  </select>
+</form>
+
+Is it a date?
+<div class="switch large round">
+  <input id="z" name="switch-z" type="radio" checked>
+  <label for="z" onclick="">Nope</label>
+
+  <input id="z1" name="switch-z" type="radio">
+  <label for="z1" onclick="">Yup</label>
+
+  <span></span>
+</div>
+
+<p id="numero2" class="so-awesome">What neighborhoods are you cool with?</p>
+<form class="custom">
+  <div class="row">
+    <div class="large-4 columns">
+      <label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> Buckhead</label>
+      <label for="checkbox2"><input type="checkbox" id="checkbox2" CHECKED style="display: none;"><span class="custom checkbox checked"></span> Midtown</label>
+      <label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3" style="display: none;"><span class="custom checkbox checked"></span> College Park</label>
+    </div>
+    <div class="large-4 columns">
+      <label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> Label for Checkbox</label>
+      <label for="checkbox2"><input type="checkbox" id="checkbox2" CHECKED style="display: none;"><span class="custom checkbox checked"></span> Label for Checkbox</label>
+      <label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3" style="display: none;"><span class="custom checkbox checked"></span> Label for Checkbox</label>
+    </div>
+    <div class="large-4 columns">
+      <label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> Label for Checkbox</label>
+      <label for="checkbox2"><input type="checkbox" id="checkbox2" CHECKED style="display: none;"><span class="custom checkbox checked"></span> Label for Checkbox</label>
+      <label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3" style="display: none;"><span class="custom checkbox checked"></span> Label for Checkbox</label>
+    </div>
+  </div>
+</form>
+
+<%= link_to "Let's do this!", results_path, class: "small button" %>
+
+<ol class="joyride-list" data-joyride>
+  <li data-id="firstStop" data-text="Next">
+    <h4>Are you ready...</h4>
+    <p>...for an awesome spontaneous night? Start by choosing what you're feeling.</p>
+  </li>
+  <li data-id="numero1" data-class="custom so-awesome" data-text="Next">
+    <p>And how much you wanna pay...</p>
+  </li>
+  <li data-id="numero2" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
+    <h4>Stop #2</h4>
+    <p>Get the details right by styling Joyride with a custom stylesheet!</p>
+  </li>
+  <li data-button="Next">
+    <h4>Stop #4</h4>
+    <p>It works as a modal too!</p>
+  </li>
+</ol>

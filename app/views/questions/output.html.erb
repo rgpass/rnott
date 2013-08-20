@@ -1,2 +1,12 @@
-<h1>Questions#output</h1>
-<p>Find me in app/views/questions/output.html.erb</p>
+<h3>Let's see what you're up to tonight.</h3>
+<p>Ambiguous description that's pulled from the database we've set up.</p>
+
+<h3>Not your style?</h3>
+<%= link_to "Do the shuffle!", results_path, class: "small button" %>
+
+<h3>Ready to rock?</h3>
+<p>Head on over to...</p>
+<p>Five Paces Inn</p>
+<p>41 Irby Ave NW</p>
+<p>Atlanta, GA 30305</p>
+<%= link_to "Get me there!", 'https://maps.google.com/maps?q=41+Irby+Ave+NW+Atlanta,+GA+30305', class: "small button" %>
