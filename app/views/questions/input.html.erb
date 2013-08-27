@@ -1,8 +1,28 @@
 <h3>What are you up to tonight?</h3>
 <p>Choose one or both</p>
-<%= render 'questions/dinnericon' %>
-<%= render 'questions/drinksicon' %>
+<form class="custom">
+  <ul class="inline-list">
+    <li>
+    <label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> <%= render 'questions/dinnericon' %></label>
+    </li>
+    <li>
+    <label for="checkbox2"><input type="checkbox" id="checkbox2" style="display: none;"><span class="custom checkbox"></span> <%= render 'questions/drinksicon' %></label>
+    </li>
+  </ul>
+</form>
 <p id="firstStop"></p>
+<!-- only shows if bar clicked -->
+<form class="custom">
+  <label for="customDropdown1">Poison giver of choice?</label>
+  <select id="customDropdown1" class="medium">
+    <option>Bar</option>
+    <option>Nightclub</option>
+    <option>Either</option>
+  </select>
+</form>
+
+
+
 <form class="custom">
 	<ul class="inline-list">
 		<li>Dinner:</li>
@@ -90,15 +110,20 @@ Is it a date?
     <h4>Are you ready...</h4>
     <p>...for an awesome spontaneous night? Start by choosing what you're feeling.</p>
   </li>
+  <!-- tip for if they choose drinks, need CSS class to change data-id to secondStop -->
+  <!-- "Let's get schwasted! Watering hole or meat market?" -->
   <li data-id="numero1" data-class="custom so-awesome" data-text="Next" data-options="tipLocation: bottom">
-    <p>And how much you wanna pay...</p>
+    <h4>
+    <p>How much do you want to pay?</p>
   </li>
+  <!-- tip for date -->
+  <!-- "Taking someone special?" -->
   <li data-id="numero2" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
     <h4>Stop #2</h4>
     <p>Get the details right by styling Joyride with a custom stylesheet!</p>
   </li>
+  <!-- see if you can change the button to say something else like "Done" -->
   <li data-button="Next">
-    <h4>Stop #4</h4>
-    <p>It works as a modal too!</p>
+    <p>Choose the your 'hood and go be Noctaneous!s</p>
   </li>
 </ol>

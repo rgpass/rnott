@@ -1,6 +1,10 @@
 Rnott::Application.routes.draw do
+  resources :restaurants
+
+
   root to: 'questions#input'
   match '/results', to: 'questions#output'
+  match '/apitest', to: 'questions#apitest'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

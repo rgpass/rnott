@@ -4,4 +4,7 @@ class QuestionsController < ApplicationController
 
   def output
   end
+
+  def apitest
+  end
 end
