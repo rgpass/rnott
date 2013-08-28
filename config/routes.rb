@@ -1,4 +1,7 @@
 Rnott::Application.routes.draw do
+  resources :bars
+
+
   resources :restaurants
 
 

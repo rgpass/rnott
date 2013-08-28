@@ -1,16 +1,14 @@
-<h1>Result</h1>
-<h3><%= link_to 'Req', req_path %></h3>
+<h3>Let's see what you're up to tonight.</h3>
+
+
 <% @restaurants.each do |restaurant| %>
-  <tr>
-    <td><%= restaurant.name %></td>
-    <td><%= restaurant.hood %></td>
-    <td><%= restaurant.date %></td>
-    <td><%= restaurant.patio %></td>
-    <td><%= restaurant.cost %></td>
-    <td><%= restaurant.ambiguous %></td>
-    <td><%= restaurant.addy %></td>
-    <td><%= link_to 'Show', restaurant %></td>
-    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-    <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <p><%= restaurant.ambiguous %></p>
+
+  <h3>Not your style?</h3>
+  <INPUT TYPE="button" VALUE="Do the Shuffle!" onClick="history.go(0)" class="small button">
+
+  <h3>Ready to rock?</h3>
+  <p>Head on over to...</p>
+  <p><%= restaurant.name %></p>
+  <%= link_to "How do I get there?", restaurant.addy, class: "small button" %>
 <% end %>

@@ -1,0 +1,49 @@
+<%= form_for(@bar) do |f| %>
+  <% if @bar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bar.errors.count, "error") %> prohibited this bar from being saved:</h2>
+
+      <ul>
+      <% @bar.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nameb %><br />
+    <%= f.text_field :nameb %>
+  </div>
+  <div class="field">
+    <%= f.label :hoodb %><br />
+    <%= f.text_field :hoodb %>
+  </div>
+  <div class="field">
+    <%= f.label :kindb %><br />
+    <%= f.text_field :kindb %>
+  </div>
+  <div class="field">
+    <%= f.label :dateb %><br />
+    <%= f.check_box :dateb %>
+  </div>
+  <div class="field">
+    <%= f.label :patiob %><br />
+    <%= f.check_box :patiob %>
+  </div>
+  <div class="field">
+    <%= f.label :costb %><br />
+    <%= f.number_field :costb %>
+  </div>
+  <div class="field">
+    <%= f.label :ambiguousb %><br />
+    <%= f.text_area :ambiguousb %>
+  </div>
+  <div class="field">
+    <%= f.label :addyb %><br />
+    <%= f.text_field :addyb %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

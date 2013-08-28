@@ -1,21 +1,5 @@
 <h1>Listing restaurants</h1>
 
-<%= form_tag restaurants_path, :method => 'get' do %>
-  <p>
-    Do you need to be outside?:
-    <%= check_box_tag :patio, params[:patio] %><br />
-    Cost:
-    <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]])) %>
-    Date:
-    <%= check_box_tag :date, params[:date] %><br />
-    Buckhead: <%= check_box_tag :buckhead, params[:buckhead] %>
-    Midtown: <%= check_box_tag :midtown, params[:midtown] %>
-    Decatur: <%= check_box_tag :decatur, params[:decatur] %>
-    VA Highlands: <%= check_box_tag :vahighlands, params[:vahighlands] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-
 <table>
   <tr>
     <th>Name</th>

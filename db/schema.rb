@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130827190151) do
+ActiveRecord::Schema.define(:version => 20130828172722) do
+
+  create_table "bars", :force => true do |t|
+    t.string   "nameb"
+    t.string   "hoodb"
+    t.string   "kindb"
+    t.boolean  "dateb"
+    t.boolean  "patiob"
+    t.integer  "costb"
+    t.text     "ambiguousb"
+    t.string   "addyb"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "restaurants", :force => true do |t|
     t.string   "name"
