@@ -2,8 +2,6 @@
 
 <%= form_tag restaurants_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= text_field_tag :addy, params[:addy] %>
     Do you need to be outside?:
     <%= check_box_tag :patio, params[:patio] %><br />
     Cost:

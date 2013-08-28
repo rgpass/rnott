@@ -6,8 +6,8 @@ Rnott::Application.routes.draw do
   match '/results', to: 'questions#output'
   match '/apitest', to: 'questions#apitest'
 
-  match '/req', to: 'restaurants#req'
-  match '/result', to: 'restaurants#result'
+  match '/req', to: 'requests#req'
+  match '/result', to: 'requests#result'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
