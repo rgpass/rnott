@@ -1,27 +1,51 @@
 <h3>What are you up to tonight?</h3>
 
-<%= form_tag result_path, :method => 'get' do %>
-  <p>
-    Dinner?
-    <%= check_box_tag :dinner, params[:dinner] %>
-    Drinks?
-    <%= check_box_tag :drinks, params[:drinks] %><br />
-    If going out for drinks, which do you prefer? (ignore if not drinking)
-    <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]])) %>
-    How much will you spend on dinner?
-    <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]])) %>
-    How much will you spend drinking?
-    <%= select_tag(:costb, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]])) %>
-    Is the weather too good to pass up?
-    <%= check_box_tag :patio, params[:patio] %><br />
-    Is this a date?:
-    <%= check_box_tag :date, params[:date] %><br />
-    What neighborhoods are you thinking?<br />
-    Buckhead: <%= check_box_tag :buckhead, params[:buckhead] %>
-    Midtown: <%= check_box_tag :midtown, params[:midtown] %>
-    Decatur: <%= check_box_tag :decatur, params[:decatur] %>
-    VA Highlands: <%= check_box_tag :vahighlands, params[:vahighlands] %><br />
-    <%= submit_tag "Be Noctaneous!", :name => nil %>
-  </p>
-<% end %>
+<p>This is a paragraph.</p>
 
+<button class="btn1">Hide</button>
+
+
+</body>
+</html>
+
+<%= form_tag result_path, :method => 'get', class: "custom" do %>
+  <ul class="inline-list">
+    <li>
+      <label for="dinner" class="btn2">
+      <%= check_box_tag :dinner, params[:dinner] %>
+      Dinner?
+      </label>
+    </li>
+    <li>
+      <label for="drinks">
+      <%= check_box_tag :drinks, params[:drinks] %>
+      Drinks?
+      </label>
+    </li>
+  </ul>
+    <label for="kindb">If going out for drinks, which do you prefer?<br />
+    (ignore if not drinking)</label>
+    <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]]), class: "medium") %>
+    <label for="cost">What's your dinner price cap?</label>
+    <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %>
+    <label for="costb">What's your drinking price cap?</label>
+    <%= select_tag(:costb, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %>
+  <ul class="inline-list">
+    <li>
+      <label for="patio">Is the weather too good to pass up?
+      <%= check_box_tag :patio, params[:patio] %></label>
+    </li>
+  </ul>
+  <ul class="inline-list">
+    <li>
+      <label for="date">Is this a date?
+      <%= check_box_tag :date, params[:date] %></label>
+    </li>
+  </ul>
+    <label>What neighborhoods are you thinking?</label>
+    <label for="buckhead"><%= check_box_tag :buckhead, params[:buckhead] %> Buckhead</label>
+    <label for="midtown"><%= check_box_tag :midtown, params[:midtown] %> Midtown</label>
+    <label for="decatur"><%= check_box_tag :decatur, params[:decatur] %> Decatur</label>
+    <label for="vahighlands"><%= check_box_tag :vahighlands, params[:vahighlands] %> VA Highlands</label><br />
+    <%= submit_tag "Be Noctaneous!", :name => nil, class: "small button" %>
+<% end %>

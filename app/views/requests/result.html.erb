@@ -1,34 +1,41 @@
-<h3>Let's see what you're up to tonight.</h3>
+<% if params[:dinner] != "on" && params[:drinks] != "on" %>
+  <h3>You forgot something!</h3>
+  <h5>Go back and click if you're doing dinner and/or drinks!</h5>
 
-<% if params[:dinner] == "on" %>
-  <% if @restaurants.count == 0 %>
-    <h5>No restaurant matches. Head back and loosen it up!</h5>
-  <% else %>
-    <h6>For dinner...</h6>
-    <% @restaurants.each do |restaurant| %>
-      <p><%= restaurant.ambiguous %></p>
-      <h6>Head on over to:</h6>
-      <p><%= restaurant.name %></p>
-      <%= link_to "How do I get there?", restaurant.addy, class: "small button" %>
+<% else %>
+  <h3>Let's see what you're up to tonight.</h3>
+
+  <% if params[:dinner] == "on" %>
+    <% if @restaurants.count == 0 %>
+      <h5>No restaurant matches. Head back and loosen it up!</h5>
+    <% else %>
+      <h6>For dinner...</h6>
+      <% @restaurants.each do |restaurant| %>
+        <p><%= restaurant.ambiguous %></p>
+        <h6>Head on over to:</h6>
+        <p><%= restaurant.name %></p>
+        <%= link_to "How do I get there?", restaurant.addy, class: "small button" %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
-<% if params[:drinks] == "on" %>
-  <% if @bars.count == 0 %>
-    <h5>No wateringhole matches. Head back and loosen it up!</h5>
-  <% else %>
-    <h6>For the party...</h6>
-    <% @bars.each do |bar| %>
-      <p><%= bar.ambiguousb %></p>
-      <h6>When you're ready, head over to:</h6>
-      <p><%= bar.nameb %></p>
-      <%= link_to "How do I get there?", bar.addyb, class: "small button" %>
+  <% if params[:drinks] == "on" %>
+    <% if @bars.count == 0 %>
+      <h5>No wateringhole matches. Head back and loosen it up!</h5>
+    <% else %>
+      <h6>For the party...</h6>
+      <% @bars.each do |bar| %>
+        <p><%= bar.ambiguousb %></p>
+        <h6>When you're ready, head over to:</h6>
+        <p><%= bar.nameb %></p>
+        <%= link_to "How do I get there?", bar.addyb, class: "small button" %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
-<% if @restaurants.count == 1 || @bars.count == 1 %> 
-  <h3>Not your style?</h3>
-  <INPUT TYPE="button" VALUE="Do the Shuffle!" onClick="history.go(0)" class="small button">
+  <% if @restaurants.count == 1 || @bars.count == 1 %> 
+    <h3>Not your style?</h3>
+    <INPUT TYPE="button" VALUE="Do the Shuffle!" onClick="history.go(0)" class="small button">
+  <% end %>
+
 <% end %>

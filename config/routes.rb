@@ -5,7 +5,7 @@ Rnott::Application.routes.draw do
   resources :restaurants
 
 
-  root to: 'questions#input'
+  root to: 'requests#req'
   match '/results', to: 'questions#output'
   match '/apitest', to: 'questions#apitest'
 
