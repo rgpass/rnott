@@ -2,6 +2,12 @@
 
 <%= form_tag result_path, :method => 'get' do %>
   <p>
+    Dinner?
+    <%= check_box_tag :dinner, params[:dinner] %>
+    Drinks?
+    <%= check_box_tag :drinks, params[:drinks] %><br />
+    If going out for drinks, which do you prefer? (ignore if not drinking)
+    <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]])) %>
     How much will you spend on dinner?
     <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]])) %>
     How much will you spend drinking?

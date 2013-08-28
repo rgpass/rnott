@@ -5,6 +5,7 @@ class Bar < ActiveRecord::Base
   	resb = order('created_at DESC')
     #res = res.where('name LIKE ?', "%#{params[:search]}%").order('created_at DESC') if params[:search].present?
     #res = res.where('addy LIKE ?', "%#{params[:addy]}%") if params[:addy].present?
+    resb = resb.where('kindb = ?', params[:kindb]) if params[:kindb] != "Either"
     resb = resb.where('patiob = ?', params[:patio] == "on" ? true : false) if params[:patio].present?
     resb = resb.where('costb <= ?', params[:costb])
 		resb = resb.where('dateb = ?', params[:date] == "on" ? true : false) if params[:date].present?
