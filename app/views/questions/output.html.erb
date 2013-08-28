@@ -10,3 +10,14 @@
 <p>41 Irby Ave NW</p>
 <p>Atlanta, GA 30305</p>
 <%= link_to "Get me there!", 'https://maps.google.com/maps?q=41+Irby+Ave+NW+Atlanta,+GA+30305', class: "small button" %>
+
+<!-- Tested in rails c --sandbox and it works -->
+<!-- Restaurant.where(id: Restaurant.pluck(:id).sample(1)) -->
+<!-- Need to figure out how to do it based off criteria -->
+<!-- also tested... -->
+<!-- Restaurant.find(:all, :conditions => ["patio = ? OR patio = ?", true, false]) -->
+<!-- can use multiple criteria. Ex from SO -->
+<!-- Student.find(:all,
+:conditions => ["seeking_position = ? AND min_hourly = ? AND max_hourly = ?
+AND start_weeks between ?",
+position, min_hourly, max_hourly, start_weeks]) -->
