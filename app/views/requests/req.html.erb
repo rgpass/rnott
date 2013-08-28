@@ -1,35 +1,25 @@
 <h3>What are you up to tonight?</h3>
-
-<p>This is a paragraph.</p>
-
-<button class="btn1">Hide</button>
-
-
-</body>
-</html>
-
 <%= form_tag result_path, :method => 'get', class: "custom" do %>
   <ul class="inline-list">
     <li>
-      <label for="dinner" class="btn2">
+      <label for="dinner" class="dinnerselect">
       <%= check_box_tag :dinner, params[:dinner] %>
       Dinner?
       </label>
     </li>
     <li>
-      <label for="drinks">
+      <label for="drinks" class="drinksselect">
       <%= check_box_tag :drinks, params[:drinks] %>
       Drinks?
       </label>
     </li>
   </ul>
-    <label for="kindb">If going out for drinks, which do you prefer?<br />
-    (ignore if not drinking)</label>
-    <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]]), class: "medium") %>
-    <label for="cost">What's your dinner price cap?</label>
-    <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %>
-    <label for="costb">What's your drinking price cap?</label>
+    <span class="dinnertoggle"><label for="cost">What's your dinner price cap?</label>
+    <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %></span>
+    <span class="drinkstoggle"><label for="costb">What's your drinking price cap?</label>
     <%= select_tag(:costb, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %>
+    <label for="kindb">Which do you prefer?</label>
+    <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]]), class: "medium") %></span>
   <ul class="inline-list">
     <li>
       <label for="patio">Is the weather too good to pass up?

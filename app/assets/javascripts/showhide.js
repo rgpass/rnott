@@ -1,8 +1,18 @@
 $(document).ready(function(){
-  $(".btn1").click(function(){
-  	$("p").hide();
+	$(".dinnertoggle").hide();
+	$(".drinkstoggle").hide();
+
+	if ($('#dinner').is(':checked')){
+		$(".dinnertoggle").show();
+	};
+	if ($('#drinks').is(':checked')){
+		$(".drinkstoggle").show();
+	};
+
+  $(".dinnerselect").click(function(){
+  	$(".dinnertoggle").toggle();
   });
-  $(".btn2").click(function(){
-  	$("p").show();
+  $(".drinksselect").click(function(){
+  	$(".drinkstoggle").toggle();
   });
 });
