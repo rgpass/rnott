@@ -4,6 +4,8 @@
   <p>
     How much will you spend on dinner?
     <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]])) %>
+    How much will you spend drinking?
+    <%= select_tag(:costb, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]])) %>
     Is the weather too good to pass up?
     <%= check_box_tag :patio, params[:patio] %><br />
     Is this a date?:

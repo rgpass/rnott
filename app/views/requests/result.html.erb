@@ -12,3 +12,8 @@
   <p><%= restaurant.name %></p>
   <%= link_to "How do I get there?", restaurant.addy, class: "small button" %>
 <% end %>
+
+<% @bars.each do |bar| %>
+  <p><%= bar.ambiguousb %></p>
+  <p><%= bar.nameb %></p>
+<% end %>
