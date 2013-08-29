@@ -1,4 +1,5 @@
 <h3>What are you up to tonight?</h3>
+
 <%= form_tag result_path, :method => 'get', class: "custom" do %>
   <ul class="inline-list">
     <li>
@@ -14,9 +15,9 @@
       </label>
     </li>
   </ul>
-    <span class="dinnertoggle"><label for="cost">What's your dinner price cap?</label>
+    <span class="dinnertoggle hidden"><label for="cost">What's your dinner price cap?</label>
     <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %></span>
-    <span class="drinkstoggle"><label for="costb">What's your drinking price cap?</label>
+    <span class="drinkstoggle hidden"><label for="costb">What's your drinking price cap?</label>
     <%= select_tag(:costb, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %>
     <label for="kindb">Which do you prefer?</label>
     <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]]), class: "medium") %></span>
