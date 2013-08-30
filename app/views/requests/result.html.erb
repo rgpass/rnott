@@ -5,7 +5,10 @@
 <% else %>
   <h3>Let's see what you're up to tonight.</h3>
   <h5>
-    <%= pluralize(Restaurant.search(params).count, "dinner option") %> and <%= pluralize(Bar.search(params).count, "drink option") %> match what you selected.
+    You have 
+    <% if params[:dinner] == "on" && params[:drinks] == "on" %><%= pluralize(Restaurant.search(params).count, "dinner option") %> and <%= pluralize(Bar.search(params).count, "drink option") %>.
+    <% elsif params[:dinner] == "on" %><%= pluralize(Restaurant.search(params).count, "dinner option") %>.
+    <% elsif params[:drinks] == "on" %><%= pluralize(Bar.search(params).count, "drink option") %>.<% end %>
   </h5>
 
   <% if params[:dinner] == "on" %>

@@ -1,7 +1,6 @@
 <h3>What are you up to tonight?</h3>
 
 <%= form_tag result_path, :method => 'get', class: "custom" do %>
-  <label>Dinner? Drinks? Both?</label>
   <ul class="inline-list">
     <li>
       <label for="dinner" class="dinnerselect icon">
@@ -18,13 +17,13 @@
   </ul>
   <span id="firstStop"></span>
     <span class="dinnertoggle hidden"><label for="cost">What's your dinner price cap?</label>
-    <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %></span>
+    <%= select_tag(:cost, options_for_select([['$ : Cheap, Under $10', 1], ['$$ : Moderate, $11 - $30', 2], ['$$$ : Spendy, $31 - $60',3], ['$$$$ : Splurge, Above $61',4]]), class: "medium") %></span>
   <span id="secondStop" class="jrdinner"></span>
     <span class="drinkstoggle hidden"><label for="costb">What's your drinking price cap?</label>
-    <%= select_tag(:costb, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %>
+    <%= select_tag(:costb, options_for_select([['$ : Inexpensive', 1], ['$$ : Moderate', 2], ['$$$ : Pricey',3], ['$$$$ : Ultra-High End',4]]), class: "medium") %>
   <span id="thirdStop"></span>
     <label for="kindb">Which do you prefer?</label>
-    <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]]), class: "medium") %></span>
+    <%= select_tag(:kindb, options_for_select([['Bar or Nightclub works', "Either"], ['Just Bars', "Bar"], ['Just Nightclubs', "Nightclub"]]), class: "medium") %></span>
   <span id="fourthStop"></span>
   <ul class="inline-list">
     <li>
