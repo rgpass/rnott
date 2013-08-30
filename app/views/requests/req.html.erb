@@ -1,15 +1,16 @@
 <h3>What are you up to tonight?</h3>
 
 <%= form_tag result_path, :method => 'get', class: "custom" do %>
+  <label>Dinner? Drinks? Both?</label>
   <ul class="inline-list">
     <li>
-      <label for="dinner" class="dinnerselect">
+      <label for="dinner" class="dinnerselect icon">
       <span class="hidden"><%= check_box_tag :dinner, params[:dinner] %></span>
-      <span style="color:blue"><%= render 'questions/dinnericon' %></span>
+      <%= render 'questions/dinnericon' %>
       </label>
     </li>
     <li>
-      <label for="drinks" class="drinksselect">
+      <label for="drinks" class="drinksselect icon">
       <span class="hidden"><%= check_box_tag :drinks, params[:drinks] %></span>
       <%= render 'questions/drinksicon' %>
       </label>
@@ -34,7 +35,7 @@
   <span id="fifthStop"></span>
   <ul class="inline-list">
     <li>
-      <label for="date">Is this a date?
+      <label for="date">Bringing someone special?
       <%= check_box_tag :date, params[:date] %></label>
     </li>
   </ul>

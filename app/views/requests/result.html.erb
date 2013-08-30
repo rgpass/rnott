@@ -4,6 +4,9 @@
 
 <% else %>
   <h3>Let's see what you're up to tonight.</h3>
+  <h5>
+    <%= pluralize(Restaurant.search(params).count, "dinner option") %> and <%= pluralize(Bar.search(params).count, "drink option") %> match what you selected.
+  </h5>
 
   <% if params[:dinner] == "on" %>
     <% if @restaurants.count == 0 %>
@@ -12,9 +15,10 @@
       <h6>For dinner...</h6>
       <% @restaurants.each do |restaurant| %>
         <p><%= restaurant.ambiguous %></p>
-        <h6>Head on over to:</h6>
-        <p><%= restaurant.name %></p>
-        <%= link_to "How do I get there?", restaurant.addy, class: "small button" %>
+        <span class="hidden dinnername"><h6>Head on over to:</h6>
+        <p><%= restaurant.name %></p></span>
+        <p><a class="cursor dinnershow">I'm lame and hate surprises.</a></p>
+        <%= link_to "Give me the directions!", restaurant.addy, class: "small button" %>
       <% end %>
     <% end %>
   <% end %>
@@ -26,14 +30,16 @@
       <h6>For the party...</h6>
       <% @bars.each do |bar| %>
         <p><%= bar.ambiguousb %></p>
-        <h6>When you're ready, head over to:</h6>
-        <p><%= bar.nameb %></p>
-        <%= link_to "How do I get there?", bar.addyb, class: "small button" %>
+        <span class="hidden drinksname"><h6>When you're ready, head over to:</h6>
+        <p><%= bar.nameb %></p></span>
+        <p><a class="cursor drinksshow">I'm lame and hate surprises.</a></p>
+        <%= link_to "Get me there!", bar.addyb, class: "small button" %>
       <% end %>
     <% end %>
   <% end %>
 
-  <% if @restaurants.count == 1 || @bars.count == 1 %> 
+  <!-- Have the shuffle hide if only one option -->
+  <% if (@restaurants.count == 1 && Restaurant.search(params).count > 1) || (@bars.count == 1 && Bar.search(params).count > 1) %> 
     <h3>Not your style?</h3>
     <INPUT TYPE="button" VALUE="Do the Shuffle!" onClick="history.go(0)" class="small button">
   <% end %>

@@ -1,7 +1,8 @@
-<fieldset>
-	<legend>Check some boxes</legend>
-	<input type="checkbox" name="test[]" value="foo" id="foo_field"><label for="foo_field">Foo</label>
-	<input type="checkbox" name="test[]" value="bar" id="bar_field"><label for="bar_field">Bar</label>
-	<input type="checkbox" name="test[]" value="baz" id="baz_field"><label for="baz_field">Baz</label>
-	<input type="submit" value="Submit" name="subm">
-</fieldset>
+<p><%= Time.now.strftime("%I:%M:%S %z") %></p>
+
+<p><%= Time.now.strftime("%A, %B %d, %Y at %lf%p") %></p>
+
+<p><p><%= Time.now.strftime("%a, %m/%d/%y at %H:%M:%S") %></p>
+
+<!-- Full list at http://apidock.com/rails/ActiveSupport/TimeWithZone/strftime -->
+<!-- Can add a function so that it gives a different message based on the time -->
