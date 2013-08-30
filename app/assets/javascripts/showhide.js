@@ -1,3 +1,7 @@
+function goBack() {
+  window.history.back()
+}
+
 $(document).ready(function(){
 	if ($('#dinner').is(':checked')){
 		$('.dinnertoggle').removeClass('hidden');

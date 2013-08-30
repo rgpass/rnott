@@ -1,13 +1,13 @@
 <% if params[:dinner] != "on" && params[:drinks] != "on" %>
   <h3>You forgot something!</h3>
-  <h5>Go back and click if you're doing dinner and/or drinks!</h5>
+  <h5>Go <a class="cursor" onclick="goBack()">back</a> and select what you're doing tonight!</h5>
 
 <% else %>
   <h3>Let's see what you're up to tonight.</h3>
 
   <% if params[:dinner] == "on" %>
     <% if @restaurants.count == 0 %>
-      <h5>No restaurant matches. Head back and loosen it up!</h5>
+      <h5>No restaurant matches. Head <a class="cursor" onclick="goBack()">back</a> and loosen it up!</h5>
     <% else %>
       <h6>For dinner...</h6>
       <% @restaurants.each do |restaurant| %>
@@ -21,7 +21,7 @@
 
   <% if params[:drinks] == "on" %>
     <% if @bars.count == 0 %>
-      <h5>No wateringhole matches. Head back and loosen it up!</h5>
+      <h5>No wateringhole matches. Head <a class="cursor" onclick="goBack()">back</a> and loosen it up!</h5>
     <% else %>
       <h6>For the party...</h6>
       <% @bars.each do |bar| %>
