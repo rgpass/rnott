@@ -12,25 +12,16 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <li class="divider"></li>
-      <li><%= link_to "Home", root_path %></li>
+      <li class="hide-for-large"><%= link_to "Home", root_path %></li>
       <li class="divider"></li>
-      <li><%= link_to "Test", apitest_path %></li>
-      <li class="divider"></li>
-      <li><%= link_to "Restar", restaurants_path %></li>
-      <li class="divider"></li>
-      <li><%= link_to "Bars", bars_path %></li>
-      <li class="divider"></li>
-      <li><%= link_to "Req", req_path %></li>
-      <li class="divider"></li>
-      <li><%= link_to "Result", result_path %></li>
     </ul>
 
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="divider hide-for-small"></li>
-      <li><a href="#">Login</a></li>
+      <li><%= link_to "Add a Restaurant", restaurants_path %></li>
       <li class="divider"></li>
-      <li><a href="#">Sign up free</a></li>
+      <li><%= link_to "Add a Bar", bars_path %></li>
     </ul>
   </section>
 </nav>
