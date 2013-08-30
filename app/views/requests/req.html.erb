@@ -4,35 +4,41 @@
   <ul class="inline-list">
     <li>
       <label for="dinner" class="dinnerselect">
-      <%= check_box_tag :dinner, params[:dinner] %>
-      Dinner?
+      <span class="hidden"><%= check_box_tag :dinner, params[:dinner] %></span>
+      <span style="color:blue"><%= render 'questions/dinnericon' %></span>
       </label>
     </li>
     <li>
       <label for="drinks" class="drinksselect">
-      <%= check_box_tag :drinks, params[:drinks] %>
-      Drinks?
+      <span class="hidden"><%= check_box_tag :drinks, params[:drinks] %></span>
+      <%= render 'questions/drinksicon' %>
       </label>
     </li>
   </ul>
+  <span id="firstStop"></span>
     <span class="dinnertoggle hidden"><label for="cost">What's your dinner price cap?</label>
     <%= select_tag(:cost, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %></span>
+  <span id="secondStop" class="jrdinner"></span>
     <span class="drinkstoggle hidden"><label for="costb">What's your drinking price cap?</label>
     <%= select_tag(:costb, options_for_select([['$', 1], ['$$', 2], ['$$$',3], ['$$$$',4]]), class: "medium") %>
+  <span id="thirdStop"></span>
     <label for="kindb">Which do you prefer?</label>
     <%= select_tag(:kindb, options_for_select([['Bar', "Bar"], ['Nightclub', "Nightclub"], ['Either', "Either"]]), class: "medium") %></span>
+  <span id="fourthStop"></span>
   <ul class="inline-list">
     <li>
       <label for="patio">Is the weather too good to pass up?
       <%= check_box_tag :patio, params[:patio] %></label>
     </li>
   </ul>
+  <span id="fifthStop"></span>
   <ul class="inline-list">
     <li>
       <label for="date">Is this a date?
       <%= check_box_tag :date, params[:date] %></label>
     </li>
   </ul>
+  <span id="sixthStop"></span>
     <label>What neighborhoods are you thinking?</label>
     <label for="buckhead"><%= check_box_tag :buckhead, params[:buckhead] %> Buckhead</label>
     <label for="midtown"><%= check_box_tag :midtown, params[:midtown] %> Midtown</label>
@@ -40,3 +46,4 @@
     <label for="vahighlands"><%= check_box_tag :vahighlands, params[:vahighlands] %> VA Highlands</label><br />
     <%= submit_tag "Be Noctaneous!", :name => nil, class: "small button" %>
 <% end %>
+

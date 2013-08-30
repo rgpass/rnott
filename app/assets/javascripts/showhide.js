@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	if ($('#dinner').is(':checked')){
 		$('.dinnertoggle').removeClass('hidden');
+		$('path#dinnericon').attr('style','fill:grey');
 	};
 
 	if ($('#drinks').is(':checked')){
@@ -8,19 +9,20 @@ $(document).ready(function(){
 	};
 
 	$(".dinnerselect").click(function(){
-		$(".dinnertoggle").toggle("slow");
+		$(".dinnertoggle").toggle("fast", "swing");
+		if($('#dinner').is(':checked')){
+			$('path#dinnericon').attr('style','fill:black');
+		} else {
+			$('path#dinnericon').attr('style','fill:grey');
+		};
 	});
 
 	$(".drinksselect").click(function(){
-		$(".drinkstoggle").toggle("slow");
+		$(".drinkstoggle").toggle("fast", "swing");
+		if($('#drinks').is(':checked')){
+			$('path#drinksicon').attr('style','fill:black');
+		} else {
+			$('path#drinksicon').attr('style','fill:grey');
+		};
 	});
 });
-
-
-// Works
-	// $(".dinnerselect").click(function(){
-	// 	$(".dinnertoggle").toggleClass('hidden');
-	// });
-	// $(".drinksselect").click(function(){
-	// 	$(".drinkstoggle").toggleClass('hidden');
-	// });
