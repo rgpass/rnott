@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 	if ($('#drinks').is(':checked')){
 		$('.drinkstoggle').removeClass('hidden');
+		$('path#drinksicon').attr('style','fill:grey');
 	};
 
 	$(".dinnerselect").click(function(){
