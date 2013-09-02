@@ -1,7 +1,7 @@
-<div class="slideThree">  
+<span class="hidden"><div class="slideThree">  
   <input type="checkbox" value="None" id="slideThree" name="check" />
   <label for="slideThree"></label>
-</div>
+</div></span>
 
 <h3>What are you up to tonight?</h3>
 
@@ -11,7 +11,7 @@
       <label for="dinner" class="dinnerselect icon">
       <span class="hidden"><%= check_box_tag :dinner, params[:dinner] %></span>
       <%= render 'questions/dinnericon' %>
-      </label>
+      </label></span>
     </li>
     <li>
       <label for="drinks" class="drinksselect icon">
