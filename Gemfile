@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'coffee-rails', '3.2.2'
+gem 'social-share-button'
 
 group :development do
 	gem 'sqlite3', '1.3.5'

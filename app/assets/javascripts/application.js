@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require showhide
+//= require social-share-button
 //= require_tree .
 
 $(document).foundation();

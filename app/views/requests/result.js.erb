@@ -1,8 +1,8 @@
 $('#ajax').html("<%= escape_javascript(render(partial: 'requests/dinnerresult')).html_safe %>");
 
 $(".dinnershow").click(function(){
-		$(".dinnername").toggle();
-		$("a.dinnershow").text(function(i, txt) {
-			return txt == "I'm lame and hate surprises." ? "Hide it!" : "I'm lame and hate surprises.";
-		});
+	$(".dinnername").toggle();
+	$("a.dinnershow").text(function(i, txt) {
+		return txt == "I'm lame and hate surprises." ? "Hide it!" : "I'm lame and hate surprises.";
 	});
+});

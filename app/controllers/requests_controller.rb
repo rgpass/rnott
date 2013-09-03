@@ -10,13 +10,13 @@ class RequestsController < ApplicationController
 	end
 
 	def result
-		@restaurants = Restaurant.search(params)
+		@restaurants = Restaurant.search(params).sample(1)
     #respond_to do |format|
     #  format.html # index.html.erb
     #  format.json { render json: @restaurants }
     #end
 
-    @bars = Bar.search(params)
+    @bars = Bar.search(params).sample(1)
 
     respond_to do | format |
       format.html
@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
 	end
 
   def bar
-    @bars = Bar.search(params)
+    @bars = Bar.search(params).sample(1)
 
     respond_to do | format |
       format.js

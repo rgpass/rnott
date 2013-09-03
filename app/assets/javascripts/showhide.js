@@ -49,9 +49,3 @@ $(document).ready(function(){
 		});
 	});
 });
-
-// $('[class^=link]').click(function() {
-//     $('span', this).text(function(i, txt) {
-//         return txt === "Open" ? "Close" : "Open";
-//     }).end().parent().next().toggle();
-// });
