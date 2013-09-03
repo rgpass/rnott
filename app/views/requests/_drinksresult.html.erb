@@ -1,0 +1,10 @@
+<% @bars.sample(1).each do |bar| %>
+  <%= bar.ambiguousb %>
+  <br /><br />
+  <%= link_to( "Give me another drink option.", params.merge( :controller => "requests", :action => "bar" ), remote: true) %>
+  <br />
+  <span class="hidden drinksname"><br /><h6>When you're ready, head over to:</h6>
+  <%= bar.nameb %><br /><br /></span>
+  <p><a class="cursor drinksshow">I'm lame and hate surprises.</a></p>
+  <%= link_to "Get me there!", bar.addyb, class: "small button" %>
+<% end %>

@@ -1,0 +1,14 @@
+<!-- This pulled in all the params from the previous search. This was the very manual approach, however. To see a better approach, go to _dinnerresult -->
+<%= link_to "Ref2", 
+  result_path(:dinner => params[:dinner], :drinks => params[:drinks], cost: params[:cost], costb: params[:costb], kindb: params[:kindb], patio: params[:patio], date: params[:date], buckhead: params[:buckhead], midtown: params[:midtown], decatur: params[:decatur], vahighlands: params[:vahighlands]), 
+	:method=> :get %>
+
+<!-- AJAX request for the restaurants portion via a submit button. Currently using via a link_to -->
+	<%= form_tag( params.merge( :controller => "requests", :action => "result" ), remote: true) %>
+	<%= submit_tag "Be Noctaneous!", :name => nil, class: "small button" %>
+
+<!-- Only shows a shuffle all button if there is more than one option -->
+<% if (@restaurants.sample(1).count == 1 && Restaurant.search(params).count > 1) || (@bars.sample(1).count == 1 && Bar.search(params).count > 1) %> 
+	<h3>Not your style?</h3>
+	<INPUT TYPE="button" VALUE="Do the Shuffle!" onClick="history.go(0)" class="small button" >
+<% end %>

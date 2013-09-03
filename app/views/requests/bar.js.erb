@@ -1,0 +1,8 @@
+$('#ajaxb').html("<%= escape_javascript(render(partial: 'requests/drinksresult')).html_safe %>");
+
+$(".drinksshow").click(function(){
+	$(".drinksname").toggle();
+	$("a.drinksshow").text(function(i, txt) {
+		return txt == "I'm lame and hate surprises." ? "Hide it!" : "I'm lame and hate surprises.";
+	});
+});

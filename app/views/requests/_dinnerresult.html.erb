@@ -1,0 +1,10 @@
+<% @restaurants.sample(1).each do |restaurant| %>
+  <%= restaurant.ambiguous %>
+  <br /><br />
+  <%= link_to( "Give me another dinner option.", params.merge( :controller => "requests", :action => "result" ), remote: true) %>
+  <br />
+  <span class="hidden dinnername"><br /><h6>Head on over to:</h6>
+  <%= restaurant.name %><br /><br /></span>
+  <p><a class="cursor dinnershow">I'm lame and hate surprises.</a></p>
+  <%= link_to "Give me the directions!", restaurant.addy, class: "small button" %>
+<% end %>

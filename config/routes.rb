@@ -12,6 +12,8 @@ Rnott::Application.routes.draw do
   match '/req', to: 'requests#req'
   match '/result', to: 'requests#result'
 
+  match ':controller/:action'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
