@@ -30,19 +30,11 @@
     <label for="kindb">Which do you prefer?</label>
     <%= select_tag(:kindb, options_for_select([['Bar or Nightclub works', "Either"], ['Just Bars', "Bar"], ['Just Nightclubs', "Nightclub"]]), class: "medium") %></span>
   <span id="fourthStop"></span>
-  <ul class="inline-list">
-    <li>
-      <label for="patio">Is the weather too good to pass up?
-      <%= check_box_tag :patio, params[:patio] %></label>
-    </li>
-  </ul>
+    <label for="patio">Is the weather too good to pass up?</label>
+    <%= select_tag(:patio, options_for_select([["Nope, I'm flexible", "off"], ["Yeah, it's great patio weather", "on"]]), class: "medium") %>
   <span id="fifthStop"></span>
-  <ul class="inline-list">
-    <li>
-      <label for="date">Bringing someone special?
-      <%= check_box_tag :date, params[:date] %></label>
-    </li>
-  </ul>
+    <label for="date">Bringing someone special?</label>
+    <%= select_tag(:date, options_for_select([["No, going stag", "off"], ["Yes, I want to impress", "on"]]), class: "medium") %>
   <span id="sixthStop"></span>
     <label>What neighborhoods are you thinking?</label>
     <label for="buckhead"><%= check_box_tag :buckhead, params[:buckhead] %> Buckhead</label>
