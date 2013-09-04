@@ -1,6 +1,8 @@
 <% @restaurants.each do |restaurant| %>
   <%= restaurant.ambiguous %>
   <br /><br />
+  Cost: <%= "$"*restaurant.cost %>
+  <br /><br />
   <%= link_to( "Give me another dinner option.", params.merge( :controller => "requests", :action => "result" ), remote: true) %>
   <br />
   <span class="hidden dinnername"><br /><h6>Head on over to:</h6>

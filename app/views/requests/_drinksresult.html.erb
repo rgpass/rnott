@@ -1,6 +1,8 @@
 <% @bars.each do |bar| %>
   <%= bar.ambiguousb %>
   <br /><br />
+  Cost: <%= "$"*bar.costb %>
+  <br /><br />
   <%= link_to( "Give me another drink option.", params.merge( :controller => "requests", :action => "bar" ), remote: true) %>
   <br />
   <span class="hidden drinksname"><br /><h6>When you're ready, head over to:</h6>
