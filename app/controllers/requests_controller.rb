@@ -7,6 +7,9 @@ class RequestsController < ApplicationController
     #end
 
     @bars = Bar.search(params)
+
+    @w = WeatherUnderground::Base.new
+    @v = @w.TextForecast( '30305' ).days
 	end
 
 	def result

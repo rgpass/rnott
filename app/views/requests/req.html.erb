@@ -32,6 +32,13 @@
   <span id="fourthStop"></span>
     <label for="patio">Is the weather too good to pass up?</label>
     <%= select_tag(:patio, options_for_select([["Nope, I'm flexible", "off"], ["Yeah, it's great patio weather", "on"]]), class: "medium") %>
+    <label><% @v.each do |day| %>
+      <% if day.title == "Tonight" %>
+      Tonight's forecast:<br />
+      <%= image_tag 'http://icons.wxug.com/i/c/a/' + day.icon + '.gif' %><br />
+      <%= day.text %>
+      <% end %>
+    <% end %></label><br /><br />
   <span id="fifthStop"></span>
     <label for="date">Bringing someone special?</label>
     <%= select_tag(:date, options_for_select([["No, going stag", "off"], ["Yes, I want to impress", "on"]]), class: "medium") %>

@@ -34,4 +34,9 @@ Rnott::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # export YELP_CONSUMER_KEY='snI1BGasyN8zh314MpUvpA'
+  # export YELP_CONSUMER_SECRET='jTZKB4h2eGkvw3Ws8BJj5jy1sWc'
+  # export YELP_TOKEN='wONW6HE4NHRnQeryN5vJ_VBug1ChvgWT'
+  # export YELP_TOKEN_SECRET='iCwa4VXO26HZvDiIvqzs2x9j1a4'
 end
