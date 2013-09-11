@@ -28,10 +28,10 @@ class RequestsController < ApplicationController
     
     request = Yelp::V2::Business::Request::Id.new(
      :yelp_business_id => "pjb2WMwa0AfK3L-dWimO8w",
-     :consumer_key => 'snI1BGasyN8zh314MpUvpA',
-     :consumer_secret => 'jTZKB4h2eGkvw3Ws8BJj5jy1sWc',
-     :token => 'wONW6HE4NHRnQeryN5vJ_VBug1ChvgWT',
-     :token_secret => 'iCwa4VXO26HZvDiIvqzs2x9j1a4')
+     :consumer_key => ENV["YELP_2_CONSUMER_KEY"],
+     :consumer_secret => ENV["YELP_2_CONSUMER_SECRET"],
+     :token => ENV["YELP_2_TOKEN"],
+     :token_secret => ENV["YELP_2_TOKEN_SECRET"])
     @response = client.search(request)
     @rating = @response['rating']
 
